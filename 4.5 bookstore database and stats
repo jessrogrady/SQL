@@ -1,0 +1,41 @@
+--CREATE A LIBRARY DATABASE
+
+CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT, author TEXT, length INTEGER, price REAL, date_borrowed TEXT);
+
+--DATE BORROWED IS IN THE ANSI DATE FORMAT
+
+INSERT INTO books VALUES (1, "Abrosia", "C.N. Crawford", 350, 4.99, '2023-04-04');
+INSERT INTO books VALUES (2, "Throne in the Dark", "A.K. Caggiano", 459, 3.99, '2023-04-01');
+INSERT INTO books VALUES (3, "Ghost", "Kat Blackthorne", 356, 4.99, '2023-03-29');
+INSERT INTO books VALUES (4, "Lady of Darkness", "Melissa Roehrich", 538, 3.99, '2023-03-28');
+INSERT INTO books VALUES (5, "Psycho Academy", "Jasmine Mas", 514, 4.99, '2023-03-28');
+INSERT INTO books VALUES (6, "Payback", "Amy Daws", 290, 0.99, '2023-03-26');
+INSERT INTO books VALUES (7, "Charming your Dad", "Sarah Blue", 323, 2.99, '2023-03-15');
+INSERT INTO books VALUES (8, "Knot my Problem", "Sinclair Kelly", 430, 4.99, '2023-03-15');
+INSERT INTO books VALUES (9, "Captivate", "E. J. Lawson", 338, 4.99, '2023-03-15');
+INSERT INTO books VALUES (10, "The Bloody Prince", "Edwina Drake", 383, 4.99, '2023-03-15');
+INSERT INTO books VALUES (11, "Final Offer", "Lauren Asher", 594, 4.99, '2023-02-07');
+INSERT INTO books VALUES (12, "Twisted", "Emily McIntire", 366, 4.99, '2023-02-07');
+INSERT INTO books Values (13, "Dance Butterfly Dance", "Reese Rivers", 449, 4.99, '2023-02-02');
+INSERT INTO books VALUES (14, "Corrupted Chaos", "Shain Rose", 374, 4.99, '2022-11-07');
+INSERT INTO books VALUES (15, "Song of the forever rains", "E.J. Mellow", 423, 4.99, '2022-09-23');
+INSERT INTO books VALUES (16, "Order of Scorpions", "Ivy Asher", 732, 5.99, '2022-09-23');
+INSERT INTO books VALUES (17, "A Song of Sky and Sacrifice", "Lana Pecherczyk", 432, 4.99, '2022-09-31');
+INSERT INTO books VALUES (18, "Daughter of no Worlds", "Carissa Broadbent", 520, 3.99, '2022-06-26');
+
+--DISPLAY THE DATABASE ORDERED BY DATE BORROWED
+SELECT * FROM books 
+ORDER BY date_borrowed desc;
+
+--WHAT IS THE TOTAL COST OF THE BOOKS IN THE LIBRARY?
+Select Sum(price) "Total Books cost"
+From books
+
+--WHAT ARE THE TOP 3 BOOKS THAT BAVE BEEN BORROWED THE LONGEST?
+SELECT title, author, date_borrowed
+From books
+order by date_borrowed asc
+limit 3;
+
+
+
